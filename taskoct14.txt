@@ -1,0 +1,64 @@
+const scores = [
+  {
+    marks: 32,
+    name: "Yvette Merritt"
+  },
+  {
+    marks: 57,
+    name: "Lillian Ellis"
+  },
+  {
+    marks: 22,
+    name: "Mccall Carter"
+  },
+  {
+    marks: 21,
+    name: "Pate Collier"
+  },
+  {
+    marks: 91,
+    name: "Debra Beard"
+  },
+  {
+    marks: 75,
+    name: "Nettie Hancock"
+  },
+  {
+    marks: 20,
+    name: "Hatfield Hodge"
+  }
+];
+
+console.log(scores.map(({marks,name})=>{
+  return name
+}))
+console.log(scores.filter((ele)=>{
+  if(ele.marks>=40)
+    {
+      return  ele
+    }
+}))
+console.log(scores.filter((ele)=>{
+  if(ele.marks<40)
+    {
+      return ele
+    }
+}).map(({marks,name})=>{
+  return name
+}))
+
+console.log(scores.reduce((acc,{marks,name})=>{
+  return acc+marks
+},0)/(scores.length))
+
+var great=0;
+var nameing='';
+var res=scores.reduce((acc,{marks,name})=>{
+  if(great<marks)
+    {
+      great=marks
+      nameing=name
+    }
+  return nameing
+})
+console.log(res)
